@@ -5,8 +5,7 @@ const Admin = () => {
 
   return (
     <div>
-      <h1>You're in Admin page that nested in User</h1>
-      <NavLink to='/user' className='link'>Back to User</NavLink><br />
+      <h1>You're in Admin page</h1>
     </div>
   )
 }

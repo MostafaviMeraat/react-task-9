@@ -24,39 +24,55 @@ const Form = () => {
       })
     }
   }
-  // console.log('value: ', value, 'data: ', data);
-  if (value.user === data[0].user && value.pass === data[0].pass) {
-    navigate('/user')
 
+  const back = () => {
+    navigate("/")
   }
-  else if (value.user === data[1].user && value.pass === data[1].pass) {
-    data[2].isAdmin = true
-    navigate('/user')
-  }
-  else {
-    console.log('not found');
+
+  const handelSubmit = () => {
+    if (value.user === data[0].user && value.pass === data[0].pass ||
+      value.user === data[1].user && value.pass === data[1].pass) {
+      data[2].name = value.user
+      navigate('/dashboard')
+
+    }
+
   }
 
   return (
     <div className='form-wrapper'>
-      <div className='childs'>
-        <label>User Name: </label>
-        <input
-          autoFocus
-          type='text'
-          name='userName'
-          onChange={check}
-        />
+      <i
+        className="fa-sharp fa-solid fa-arrow-left"
+        onClick={back}
+      ></i>
+      <h1>You're in Login page</h1>
+      <div className='inputs-wrapper'>
+        <div className='childs'>
+          <label>User Name: </label>
+          <input
+            autoFocus
+            type='text'
+            name='userName'
+            onChange={check}
+          />
+        </div>
+
+        <div className='childs'>
+          <label>&nbsp; Password: </label>
+          <input
+            type='text'
+            name='password'
+            onChange={check}
+          />
+        </div>
       </div>
 
-      <div className='childs'>
-        <label>&nbsp; Password: </label>
-        <input
-          type='text'
-          name='password'
-          onChange={check}
-        />
-      </div>
+      <div className="button">
+        <button
+          onClick={handelSubmit}
+        >
+          Submit</button></div>
+
     </div>
   )
 }

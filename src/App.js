@@ -5,6 +5,9 @@ import Form from './components/Form';
 import Context from './store/Context';
 import Admin from './components/Admin';
 import User from './components/User';
+import HomePage from './components/HomePage';
+import DashBoard from './components/DashBoard';
+
 
 function App() {
 
@@ -16,10 +19,12 @@ function App() {
       <div className="main">
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Form />} />
 
-            <Route path='/user' element={<User />}>
-              <Route path='/user/admin' element={<Admin />} />
+            <Route path='/' element={<HomePage />} />
+            <Route path='login' element={<Form />} />
+            <Route path='dashboard' element={<DashBoard />}>
+              <Route path='/dashboard/user' element={<User />} />
+              <Route path='/dashboard/admin' element={<Admin />} />
             </Route>
 
           </Routes>

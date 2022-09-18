@@ -7,9 +7,10 @@ const data = [{
   user: 'admin',
   pass: 'admin'
 }, {
-  isAdmin: false,
-  inAdmin: false
+  name: ''
 }
+
+
 ]
 
 const Context = createContext(data)
